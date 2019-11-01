@@ -19,9 +19,12 @@ BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::
 		setOPS(num_ops);
 		setERA(num_ers);
 }
-explicit Date::Date(int y, int m, int d){
-     
-}
+explicit Date(int y, int m, int d):year(y), month(m), day(d){
+				}
+void Date::setYear(int y){year = y;}
+void Date::setMonth(int m){month = m; }
+void Date::setDay(int d){day = d; }
+
 void BaseballStatistic::setFirstName(std::string fname){
   firstName = fname;
 }
@@ -79,6 +82,7 @@ int BaseballStaistic::getJerseyNum()const{
 std::string BaseballStaistic::getPosition()const{
   return position;
 }
+//Check function below
 std::string getDate(int c_month, int c_day, int c_year;)const {
   int c_month, c_day, c_year;	
   cout << "Enter current date(MM DD YYYY): ";
@@ -120,4 +124,13 @@ double BaseballStaistic::getOPS()const{
 }
 double BaseballStaistic::getERA()const{
   return era;
+}
+int getDay()const{
+  return day;
+}
+int getMonth()const{
+    return month;
+}
+int getYear()const{
+    return year;
 }
