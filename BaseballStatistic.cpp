@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
 #include "BaseballStatistic.h"
+#include "Date.h"
 
 BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_postion, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers){
-    setFirstName(fname);
+   	        setFirstName(fname);
 		setLastName(lname);
 		setTeamName(tname);
 		setJerseyNum(j_num);
@@ -17,6 +18,9 @@ BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::
 		setSB(stolen_base);
 		setOPS(num_ops);
 		setERA(num_ers);
+}
+explicit Date::Date(int y, int m, int d){
+     
 }
 void BaseballStatistic::setFirstName(std::string fname){
   firstName = fname;
@@ -75,17 +79,20 @@ int BaseballStaistic::getJerseyNum()const{
 std::string BaseballStaistic::getPosition()const{
   return position;
 }
-int BaseballStaistic::getAge()const{
-  int delta = 0;
-  int birthMonth, birthDay, birthYear;
-  int c_month, c_day, c_year;
-  cout << "Enter birth date(MM DD YYYY): ";
-  cin >> birthMonth >> birthDay >> birthYear;
+std::string getDate(int c_month, int c_day, int c_year;)const {
+  int c_month, c_day, c_year;	
   cout << "Enter current date(MM DD YYYY): ";
   cin >> c_month >> c_day >> c_year;
-  if (birthMonth > c_month) delta = -1;
-  if ((birthMonth == c_month) && (birthDay > c_day)) delta = -1;
-  return(c_year - birthYear + delta);
+	return (c_month, c_day, c_year); 
+}
+int BaseballStaistic::getAge()const{
+  int delta = 0;
+  //int c_month, c_day, c_year;
+  //cout << "Enter current date(month, day, year): ";
+ // cin >> c_month >> c_day >> c_year;
+  if (getMonth()const > c_month) delta = -1;
+  if ((getMonth()const == c_month) && (getDay()const > c_day)) delta = -1;
+  return(c_year - getYear()const + delta);
 }
 char BaseballStaistic::getBatting()const{
   return batting;
@@ -114,3 +121,9 @@ double BaseballStaistic::getOPS()const{
 double BaseballStaistic::getERA()const{
   return era;
 }
+int getDay()const
+		int getMonth()const
+		int getYear()const; //Returns the year
+		std::string getDate()const {
+		}
+		int getAge()const;
