@@ -121,9 +121,3 @@ double BaseballStaistic::getOPS()const{
 double BaseballStaistic::getERA()const{
   return era;
 }
-int getDay()const
-		int getMonth()const
-		int getYear()const; //Returns the year
-		std::string getDate()const {
-		}
-		int getAge()const;
