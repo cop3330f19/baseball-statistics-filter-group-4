@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void swap1(vector<BaseballStatistic>&, string, char);
+void swap1(vector<BaseballStatistic>&, string, string);
 void swap2(vector<BaseballStatistic>&, string, int);
 void sort1(vector<BaseballStatistic>&);
 void sort2(vector<BaseballStatistic>&);
@@ -41,7 +41,7 @@ void loadFile(vector<BaseballStatistic>& e_Stat){
 	}
 }
 
-void swap1(vector<BaseballStatistic>& e_Stat, string a, char b);
+void swap1(vector<BaseballStatistic>& e_Stat, string a, string b);
   {
     string temp = *a;
     *a=*b;
