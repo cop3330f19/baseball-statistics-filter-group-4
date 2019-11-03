@@ -96,5 +96,20 @@ void swap2(vector<BaseballStatistic>& e_Stat, int a, int b);
 	
 void sort2(vector<BaseballStatistic>& e_Stat)
 {
-	
-}
+	   int i, j, min_idx; 
+   
+    for (i = 0; i < e_Stat.size()-1; i++) 
+    { 
+        min_idx = i; 
+        
+        for (j = i+1; j < e_Stat.size(); j++) 
+          if (
+              (e_Stat[j].getTeamName()const.compare(e_Stat[min_idx].getTeamName()const) < 0)
+              
+              || (e_Stat[j].getTeamName()const.compare(e_Stat[min_idx].getTeamName()const) == 0 && e_Stat[j].getJerseyNum()const.compare(e_Stat[min_idx].getJerseyNum()const ) < 0)
+    )
+		  min_idx = j; 
+      
+        swap2(e_Stat, min_idx, i);
+         } 
+
