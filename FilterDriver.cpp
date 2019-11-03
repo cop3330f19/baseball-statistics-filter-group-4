@@ -87,4 +87,14 @@ void sort1(vector<BaseballStatistic>& e_Stat){
       
         swap1(e_Stat, min_idx, i);
          } 
+void swap2(vector<BaseballStatistic>& e_Stat, int a, int b);
+  {
+    BaseballStatistic temp = *a;
+    *a=*b;
+    *b =temp;
+  }
+	
+void sort2(vector<BaseballStatistic>& e_Stat)
+{
+	
 }
