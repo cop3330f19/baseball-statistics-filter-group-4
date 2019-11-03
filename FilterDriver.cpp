@@ -21,7 +21,7 @@ int main(){
        loadFile(e_Stat);
 	char option;
 	
-	cout << "Would you like to search by A) Player Name & Position or B) Team & Jersey Number ? Enter A or B.";
+	cout << "Would you like to search by A) Player Name & Position, or B) Team & Jersey Number ? Enter A or B: ";
 	cin >> option;
 	
 	switch(toupper(option))
@@ -31,7 +31,7 @@ int main(){
 		case 'b':
 			sort2(vector<BaseballStatistic>&);
 		default:
-			cout << "You did not select a correct option" << endl;
+			cout << "You did not select a correct option." << endl;
 	}
 	
 	
