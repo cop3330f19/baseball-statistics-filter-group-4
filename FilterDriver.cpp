@@ -17,7 +17,8 @@ void loadFile(vector<BaseballStatistic>&);
 
 int main(){ 
  // Use cases to prompt user to choose from sorting options. 
-
+       vector<BaseballStatistic> e_Stat;
+       loadFile(e_Stat);
 	char option;
 	
 	cout << "Would you like to search by A) Player Name & Position or B) Team & Jersey Number ? Enter A or B.";
