@@ -21,7 +21,7 @@ int main(){
        loadFile(e_Stat);
 	char option;
 	
-	cout << "Would you like to search by A) Player Name & Position, or B) Team & Jersey Number ? Enter A or B: ";
+	cout << "Would you like to search by A) Player Name & Position, or B) Team & Jersey Number? Enter A or B: ";
 	cin >> option;
 	
 	switch(toupper(option))
@@ -52,9 +52,9 @@ void loadFile(vector<BaseballStatistic>& e_Stat){
 	double battingAverage, ops,era;
   int birthDay, birthMonth, birthYear; 
 	
-	while(teamName >> jerseyNum >> firstNmae >> lastName >> birthYear >> birthMonth >> birthDay >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position){
+	while(teamName >> jerseyNum >> firstName >> lastName >> birthYear >> birthMonth >> birthDay >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position){
 		
-		BaseballStatistic temp(teamName, jerseyNum, firstNmae, lastName, birthYear, birthMonth, birthDay, batting, throwing, atBats, battingAverage, hr, rbi, sb, ops, era, position);
+		BaseballStatistic temp(teamName, jerseyNum, firstName, lastName, birthYear, birthMonth, birthDay, batting, throwing, atBats, battingAverage, hr, rbi, sb, ops, era, position);
 		e_Stat.push_back(temp);
 	}
 }
@@ -77,9 +77,9 @@ void sort1(vector<BaseballStatistic>& e_Stat){
           if (
               (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) < 0)
               
-              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFisrtName()const.compare(e_Stat[min_idx].getFirstName()const ) < 0)
+              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFirstName()const.compare(e_Stat[min_idx].getFirstName()const ) < 0)
               
-              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFirstName()const.compare(e_Stat[min_idx].getFirstName()const) == 0 && e_Stat[j].getPostion()const < e_Stat[min_idx].getPosition()const ) 
+              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFirstName()const.compare(e_Stat[min_idx].getFirstName()const) == 0 && e_Stat[j].getPosition()const < e_Stat[min_idx].getPosition()const ) 
               )
             min_idx = j; 
       
