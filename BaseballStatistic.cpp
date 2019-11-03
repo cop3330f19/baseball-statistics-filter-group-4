@@ -34,52 +34,52 @@ void BaseballStatistic::setLastName(std::string lname){
 void BaseballStatistic::setTeamName(std::string tname){
  teamName = tname;
 }
-void BaseballStaistic::setJerseyNum(int j_num){
+void BaseballStatistic::setJerseyNum(int j_num){
  jerseyNum = j_num;
 }
-void BaseballStaistic::setPosition(std::string p_postion){
+void BaseballStatistic::setPosition(std::string p_postion){
   position = p_position;
 }
-void BaseballStaistic::setBatting(char num_bat){
+void BaseballStatistic::setBatting(char num_bat){
   batting = num_bat;
 }
-void BaseballStaistic::setThrowing(char num_throw){
+void BaseballStatistic::setThrowing(char num_throw){
   throwing = num_throw;
 }
-void BaseballStaistic::setAtBats(int at_bat){
+void BaseballStatistic::setAtBats(int at_bat){
   atBats = at_bat;
 }
-void BaseballStaistic::setBattingAverage(double bat_avg){
+void BaseballStatistic::setBattingAverage(double bat_avg){
   battingAverage = bat_avg;
 }
-void BaseballStaistic::setHR(int hour){
+void BaseballStatistic::setHR(int hour){
   hr = hour;
 }
-void BaseballStaistic::setRBI(int num_rbi){
+void BaseballStatistic::setRBI(int num_rbi){
   rbi = num_rbi;
 }
-void BaseballStaistic::setSB(int stolen_base){
+void BaseballStatistic::setSB(int stolen_base){
   sb = stolen_base;
 }
-void BaseballStaistic::setOPS(double num_ops){
+void BaseballStatistic::setOPS(double num_ops){
   ops = num_ops;
 }
-void BaseballStaistic::setERA(double num_era){
+void BaseballStatistic::setERA(double num_era){
   era = num_era;
 }
-std::string BaseballStaistic::getFirstName()const{
+std::string BaseballStatistic::getFirstName()const{
   return firstName;
 }
-std::string BaseballStaistic::getLastName()const{
+std::string BaseballStatistic::getLastName()const{
   return lastName;
 }
-std::string BaseballStaistic::getTeamName()const{
+std::string BaseballStatistic::getTeamName()const{
   return teamName;
 }
-int BaseballStaistic::getJerseyNum()const{
+int BaseballStatistic::getJerseyNum()const{
   return jerseyNum;
 }
-std::string BaseballStaistic::getPosition()const{
+std::string BaseballStatistic::getPosition()const{
   return position;
 }
 //Check function below
@@ -89,40 +89,40 @@ std::string getDate(int c_month, int c_day, int c_year;)const {
   cin >> c_month >> c_day >> c_year;
 	return (c_month, c_day, c_year); 
 }
-int BaseballStaistic::getAge()const{
+int BaseballStatistic::getAge()const{
   int delta = 0;
   //int c_month, c_day, c_year;
   //cout << "Enter current date(month, day, year): ";
- // cin >> c_month >> c_day >> c_year;
+  // cin >> c_month >> c_day >> c_year;
   if (getMonth()const > c_month) delta = -1;
   if ((getMonth()const == c_month) && (getDay()const > c_day)) delta = -1;
   return(c_year - getYear()const + delta);
 }
-char BaseballStaistic::getBatting()const{
+char BaseballStatistic::getBatting()const{
   return batting;
 }
-char BaseballStaistic::getThrowing()const{
+char BaseballStatistic::getThrowing()const{
   return throwing;
 }
-int BaseballStaistic::getAtBats()const{
+int BaseballStatistic::getAtBats()const{
   return atBats;
 }
-double BaseballStaistic::getBattingAverage()const{
+double BaseballStatistic::getBattingAverage()const{
   return battingAverage;
 }
-int BaseballStaistic::getHR()const{
+int BaseballStatistic::getHR()const{
   return hr;
 }
-int BaseballStaistic::getRBI()const{
+int BaseballStatistic::getRBI()const{
   return rbi;
 }
-int BaseballStaistic::getSB()const{
+int BaseballStatistic::getSB()const{
   return sb;
 }
-double BaseballStaistic::getOPS()const{
+double BaseballStatistic::getOPS()const{
   return ops;
 }
-double BaseballStaistic::getERA()const{
+double BaseballStatistic::getERA()const{
   return era;
 }
 int getDay()const{
