@@ -11,7 +11,8 @@ using namespace std;
 
 void swap(vector<BaseballStatistic>&, string, string);
 void sort(vector<BaseballStatistic>&);
-int search(vector<BaseballStatistic>, string, string);
+int search1(vector<BaseballStatistic>, string, string);
+int search2(vector<BaseballStatistic>, string, string);
 void loadFile(vector<BaseballStatistic>&);
 
 int main(){
@@ -63,7 +64,7 @@ void sort(vector<BaseballStatistic>& e_Stat){
               )
             min_idx = j; 
       
-        swap1(e_Stat, min_idx, i);
+        swap(e_Stat, min_idx, i);
          } 
 }
 
