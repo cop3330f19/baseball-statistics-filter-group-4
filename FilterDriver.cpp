@@ -15,9 +15,27 @@ void sort2(vector<BaseballStatistic>&);
 int search(vector<BaseballStatistic>, string, string);
 void loadFile(vector<BaseballStatistic>&);
 
-int main(){
-  
+int main(){ 
  // Use cases to prompt user to choose from sorting options. 
+
+	char option;
+	
+	cout << "Would you like to search by A) Player Name & Position or B) Team & Jersey Number ? Enter A or B.";
+	cin >> option;
+	
+	switch(toupper(option))
+	{
+		case 'a':
+			sort1(vector<BaseballStatistic>&);
+		case 'b':
+			sort2(vector<BaseballStatistic>&);
+		default:
+			cout << "You did not select a correct option" << endl;
+	}
+	
+	
+			
+
 }
 
 
