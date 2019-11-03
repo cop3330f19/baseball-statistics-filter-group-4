@@ -30,8 +30,10 @@ int main(){
 	{
 		case 'a':
 			sort1(vector<BaseballStatistic>&);
+			search1(vector<BaseballStatistic>e_Stat, lastName, firstName);
 		case 'b':
 			sort2(vector<BaseballStatistic>&);
+			search2(vector<BaseballStatistic>e_Stat, teamName);
 		default:
 			cout << "You did not select a correct option." << endl;
 			break;
