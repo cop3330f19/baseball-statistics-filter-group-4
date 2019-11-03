@@ -61,7 +61,7 @@ void loadFile(vector<BaseballStatistic>& e_Stat){
 	}
 }
 
-void swap(vector<BaseballStatistic>& e_Stat, int a, int b);
+void swap1(vector<BaseballStatistic>& e_Stat, int a, int b);
   {
     BaseballStatistic temp = *a;
     *a=*b;
@@ -85,6 +85,6 @@ void sort1(vector<BaseballStatistic>& e_Stat){
               )
             min_idx = j; 
       
-        swap(e_Stat, min_idx, i);
+        swap1(e_Stat, min_idx, i);
          } 
 }
