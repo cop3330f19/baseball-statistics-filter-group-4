@@ -19,7 +19,7 @@ BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::
 		setOPS(num_ops);
 		setERA(num_ers);
 }
-explicit Date(int y, int m, int d):year(y), month(m), day(d){
+Date::Date(int y, int m, int d):year(y), month(m), day(d){
 				}
 void Date::setYear(int y){year = y;}
 void Date::setMonth(int m){month = m; }
