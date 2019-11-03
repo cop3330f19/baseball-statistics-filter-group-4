@@ -9,10 +9,8 @@
 
 using namespace std;
 
-void swap1(vector<BaseballStatistic>&, string, string);
-void swap2(vector<BaseballStatistic>&, string, int);
-void sort1(vector<BaseballStatistic>&);
-void sort2(vector<BaseballStatistic>&);
+void swap(vector<BaseballStatistic>&, string, string);
+void sort(vector<BaseballStatistic>&);
 int search(vector<BaseballStatistic>, string, string);
 void loadFile(vector<BaseballStatistic>&);
 
@@ -41,13 +39,13 @@ void loadFile(vector<BaseballStatistic>& e_Stat){
 	}
 }
 
-void swap1(vector<BaseballStatistic>& e_Stat, string a, string b);
+void swap(vector<BaseballStatistic>& e_Stat, string a, string b);
   {
     string temp = *a;
     *a=*b;
     *b =temp;
   }
-void sort1(vector<BaseballStatistic>& e_Stat){
+void sort(vector<BaseballStatistic>& e_Stat){
     
      int i, j, min_idx; 
    
