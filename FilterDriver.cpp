@@ -13,7 +13,7 @@ void swap1(vector<BaseballStatistic>&, int, int);
 void swap2(vector<BaseballStatistic>&, int, int);
 void sort1(vector<BaseballStatistic>&);
 void sort2(vector<BaseballStatistic>&);
-int search(vector<BaseballStatistic>, string, string);
+int search1(vector<BaseballStatistic>, string, string);
 int search2(vector<BaseballStatistic>, string);
 void loadFile(vector<BaseballStatistic>&);
 
