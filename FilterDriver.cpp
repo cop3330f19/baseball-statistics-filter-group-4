@@ -32,6 +32,7 @@ int main(){
 			sort2(vector<BaseballStatistic>&);
 		default:
 			cout << "You did not select a correct option." << endl;
+			break;
 	}
 	
 	
