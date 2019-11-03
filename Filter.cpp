@@ -49,9 +49,37 @@ int search1(vector<BaseballStatistic> e_Stat, string firstName, string lastName)
         if (e_Stat[location].getLastName() < lastName 	|| (e_Stat[location].getLastName() == lastName && e_Stat[location].getFirstName() < firstName)) 
 
             lo = location + 1;
+      
         else
             hi = location - 1; 
     } 
 
     return -1; 
 }
+  
+int search2(vector<BaseballStatistic> e_Stat, string teamName)
+{
+  
+  int lo = 0;
+
+  int hi = e_Stat.size();
+    while (lo <= hi) 
+
+    { 
+
+        int location = lo + (hi-lo)/2; 
+
+        if (e_Stat[location].getTeamName() == teamName ) 
+
+            return location; 
+
+        if (e_Stat[location].getTeamName() < teamName || (e_Stat[location].getTeamName() == teamName))
+
+            lo = location + 1; 
+      
+        else
+            hi = location - 1; 
+
+    } 
+
+    return -1;
