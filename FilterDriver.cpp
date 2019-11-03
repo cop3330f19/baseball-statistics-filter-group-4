@@ -10,14 +10,14 @@
 using namespace std;
 
 void swap(vector<BaseballStatistic>&, string, string);
-void sort(vector<BaseballStatistic>&);
-int search1(vector<BaseballStatistic>, string, string);
-int search2(vector<BaseballStatistic>, string, string);
+void sort1(vector<BaseballStatistic>&);
+void sort2(vector<BaseballStatistic>&);
+int search(vector<BaseballStatistic>, string, string);
 void loadFile(vector<BaseballStatistic>&);
 
 int main(){
   
-  
+ // Use cases to prompt user to choose from sorting options. 
 }
 
 
@@ -46,7 +46,7 @@ void swap(vector<BaseballStatistic>& e_Stat, string a, string b);
     *a=*b;
     *b =temp;
   }
-void sort(vector<BaseballStatistic>& e_Stat){
+void sort1(vector<BaseballStatistic>& e_Stat){
     
      int i, j, min_idx; 
    
@@ -67,4 +67,3 @@ void sort(vector<BaseballStatistic>& e_Stat){
         swap(e_Stat, min_idx, i);
          } 
 }
-
