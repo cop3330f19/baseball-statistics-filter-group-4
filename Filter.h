@@ -9,6 +9,7 @@ class SortSearch{
   public:
           void sort1(vector<BaseballStatistic>&);
           void sort2(vector<BaseballStatistic>&);
-          void search(vector<BaseballStatistic>, string, string);
+          int search1(vector<BaseballStatistic>, string, string);
+          int search2(vector<BaseballStatistic>, string);
   
 };         
