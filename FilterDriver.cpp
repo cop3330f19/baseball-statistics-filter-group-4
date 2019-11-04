@@ -51,16 +51,21 @@ void loadFile(vector<BaseballStatistic>& e_Stat){
 	ifstream in;
 	in.open("BStats.csv");
 	
+	while(in){
+	string str;
+	parse(str, ',');
+		
 	std::string firstName, lastName, teamName, position;
 	int jerseyNum, atBats, hr, rbi, sb;
 	char batting, throwing;
 	double battingAverage, ops,era;
-  int birthDay, birthMonth, birthYear; 
+        int birthDay, birthMonth, birthYear;
 	
-	while(teamName >> jerseyNum >> firstName >> lastName >> birthYear >> birthMonth >> birthDay >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position){
+	in >> teamName >> jerseyNum >> firstName >> lastName >> birthYear >> birthMonth >> birthDay >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position;
+	
 		
-		BaseballStatistic temp(teamName, jerseyNum, firstName, lastName, birthYear, birthMonth, birthDay, batting, throwing, atBats, battingAverage, hr, rbi, sb, ops, era, position);
-		e_Stat.push_back(temp);
+	BaseballStatistic temp(teamName, jerseyNum, firstName, lastName, birthYear, birthMonth, birthDay, batting, throwing, atBats, battingAverage, hr, rbi, sb, ops, era, position);
+	e_Stat.push_back(temp);
 	}
 }
 
