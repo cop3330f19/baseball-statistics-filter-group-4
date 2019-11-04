@@ -3,23 +3,23 @@
 #include "BaseballStatistic.h"
 #include "Date.h"
 
-BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_postion, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers){
-   	        setFirstName(fname);
+BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_position, int year, int month, int day, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers){
+   	    setFirstName(fname);
 		setLastName(lname);
 		setTeamName(tname);
 		setJerseyNum(j_num);
 		setPosition(p_position);
 		setBatting(num_bat);
 		setThrowing(num_throw);
-		setAtBats(at_bats);
+		setAtBats(at_bat);
 		setBattingAverage(bat_avg);
 		setHR(hour);
 		setRBI(num_rbi);
 		setSB(stolen_base);
 		setOPS(num_ops);
 		setERA(num_ers);
+        dob = new Date(y, m, d);
 }
-Date::Date(int y, int m, int d):year(y), month(m), day(d){
 				}
 void Date::setYear(int y){year = y;}
 void Date::setMonth(int m){month = m; }
