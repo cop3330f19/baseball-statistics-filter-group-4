@@ -1,3 +1,9 @@
+// FilterDriver.cpp
+// Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
+// November 5, 2019
+// The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
+
+
 #include "BaseballStatistic.h"
 #include "Date.h"
 #include "StringHelper.h"
@@ -29,22 +35,29 @@ int main(){
     
     loadFile(e_Stat);
 	
-    
+    //Switch statement to prompt user to choose between 1 of 2 options.
 	cout << "Would you like to search by A) Player Name & Position, or B) Team & Jersey Number? Enter A or B: ";
 	cin >> option;
 	
 	switch(option)
 	{
 		case 'A':
-            cout << "Pre Sorted List" << endl;
-	        for(int i = 0; i < e_Stat.size(); i++)
-		    e_Stat[i].print();
-            //loadFile(e_Stat);
+            // Case #1: using sorting option 1
 			obj.sort1(e_Stat);
+            
+            cout << "Sorted List #1" << endl;
+            for(int i = 0; i < e_Stat.size(); i++)
+		    e_Stat[i].print();
+            
 			obj.search1(e_Stat, firstName, lastName);
             break;
 		case 'B':
+            // Case #2: using sorting option 1
 			obj.sort2(e_Stat);
+            cout << "Sorted List #2" << endl;
+            for(int i = 0; i < e_Stat.size(); i++)
+		    e_Stat[i].print();
+            
 			obj.search2(e_Stat, teamName);
 			break;
 		default:
@@ -59,7 +72,7 @@ int main(){
 
 
 
-
+// Loading file into the vector
 void loadFile(vector<BaseballStatistic>& e_Stat)
 {
 	ifstream in;
@@ -139,3 +152,5 @@ void loadFile(vector<BaseballStatistic>& e_Stat)
 	}
      in.close();
     }
+    
+
