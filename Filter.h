@@ -13,3 +13,4 @@ class SortSearch{
           int search2(vector<BaseballStatistic>, string);
   
 };         
+#endif
