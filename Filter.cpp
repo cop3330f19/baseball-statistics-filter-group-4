@@ -8,28 +8,24 @@
 using namespace std;
 
 
-void Filter::swap1(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
+void Filter::swap(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
   {
-   /* BaseballStatistic temp = *a;
-    *a=*b;
-    *b =temp;*/
-    
-    BaseballStatistic temp = e_Stat[oIdx]; 
-    e_Stat[oIdx] = e_Stat[nIdx]; 
-    e_Stat[nIdx] = temp;
-  }
-
-void Filter::swap2(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
-  {
-    BaseballStatistic temp = e_Stat[oIdx]; 
-    e_Stat[oIdx] = e_Stat[nIdx]; 
-    e_Stat[nIdx] = temp;
+    BaseballStatistic temp = e_Stat[oIdx]; //create temporary BaseballStatistic variable to hold old value during swap
+    e_Stat[oIdx] = e_Stat[nIdx]; // assign the min_idx to position
+    e_Stat[nIdx] = temp;  //assign the previous element to the new sorted postion
   }
 
 void Filter::sort1(vector<BaseballStatistic>& e_Stat)
 {
   
-  int i, j, min_idx; 
+  std::string firstName, lastName, teamName, position;
+	int jerseyNum, atBats, hr, rbi, sb;
+	char batting, throwing;
+	double battingAverage, ops,era;
+    int day, month, year;
+    
+    int i, j, min_idx; 
+    
   
   for (i = 0; i < e_Stat.size()-1; i++) 
   { 
@@ -49,7 +45,10 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
 
             min_idx = j; 
 
-        swap1(e_Stat, min_idx, i);
+        swap(e_Stat, min_idx, i);
+     
+          cout << teamName << " " << jerseyNum << " " << firstName << " " << lastName << " " << year << " " << month << " " << day << " " << batting << " " << throwing << " " << atBats << " " << battingAverage << " " << hr << " " << rbi << " " << sb << " " << ops << " " << era << " " << position << endl;
+      
 } 
 }
   
@@ -78,7 +77,7 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 
       
 
-        swap2(e_Stat, min_idx, i);
+        swap(e_Stat, min_idx, i);
 
          } 
 }
