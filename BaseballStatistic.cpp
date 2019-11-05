@@ -3,8 +3,12 @@
 #include "BaseballStatistic.h"
 #include "Date.h"
 
-BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_position, int y, int m, int d, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers){
-   	    setFirstName(fname);
+using namespace std;
+
+BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_position, int y, int m, int d, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers)
+{
+    
+       setFirstName(fname);
 		setLastName(lname);
 		setTeamName(tname);
 		setJerseyNum(j_num);
@@ -20,51 +24,61 @@ BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::
 		setERA(num_ers);
         dob = new Date(y, m, d);
 }
-				}
-void Date::setYear(int y){year = y;}
-void Date::setMonth(int m){month = m; }
-void Date::setDay(int d){day = d; }
 
-void BaseballStatistic::setFirstName(std::string fname){
+void BaseballStatistic::setFirstName(std::string fname)
+{
   firstName = fname;
 }
-void BaseballStatistic::setLastName(std::string lname){
+void BaseballStatistic::setLastName(std::string lname)
+{
   lastName = lname;
 }
-void BaseballStatistic::setTeamName(std::string tname){
+void BaseballStatistic::setTeamName(std::string tname)
+{
  teamName = tname;
 }
-void BaseballStatistic::setJerseyNum(int j_num){
+void BaseballStatistic::setJerseyNum(int j_num)
+{
  jerseyNum = j_num;
 }
-void BaseballStatistic::setPosition(std::string p_postion){
+void BaseballStatistic::setPosition(std::string p_position)
+{
   position = p_position;
 }
-void BaseballStatistic::setBatting(char num_bat){
+void BaseballStatistic::setBatting(char num_bat)
+{
   batting = num_bat;
 }
-void BaseballStatistic::setThrowing(char num_throw){
+void BaseballStatistic::setThrowing(char num_throw)
+{
   throwing = num_throw;
 }
-void BaseballStatistic::setAtBats(int at_bat){
+void BaseballStatistic::setAtBats(int at_bat)
+{
   atBats = at_bat;
 }
-void BaseballStatistic::setBattingAverage(double bat_avg){
+void BaseballStatistic::setBattingAverage(double bat_avg)
+{
   battingAverage = bat_avg;
 }
-void BaseballStatistic::setHR(int hour){
+void BaseballStatistic::setHR(int hour)
+{
   hr = hour;
 }
-void BaseballStatistic::setRBI(int num_rbi){
+void BaseballStatistic::setRBI(int num_rbi)
+{
   rbi = num_rbi;
 }
-void BaseballStatistic::setSB(int stolen_base){
+void BaseballStatistic::setSB(int stolen_base)
+{
   sb = stolen_base;
 }
-void BaseballStatistic::setOPS(double num_ops){
+void BaseballStatistic::setOPS(double num_ops)
+{
   ops = num_ops;
 }
-void BaseballStatistic::setERA(double num_era){
+void BaseballStatistic::setERA(double num_era)
+{
   era = num_era;
 }
 std::string BaseballStatistic::getFirstName()const{
@@ -82,22 +96,17 @@ int BaseballStatistic::getJerseyNum()const{
 std::string BaseballStatistic::getPosition()const{
   return position;
 }
+
 //Check function below
-std::string getDate(int c_month, int c_day, int c_year;)const {
+/*std::string getDate(int c_month, int c_day, int c_year;)const {
   int c_month, c_day, c_year;	
   cout << "Enter current date(MM DD YYYY): ";
   cin >> c_month >> c_day >> c_year;
 	return (c_month, c_day, c_year); 
-}
-int BaseballStatistic::getAge()const{
-  int delta = 0;
-  //int c_month, c_day, c_year;
-  //cout << "Enter current date(month, day, year): ";
-  // cin >> c_month >> c_day >> c_year;
-  if (getMonth()const > c_month) delta = -1;
-  if ((getMonth()const == c_month) && (getDay()const > c_day)) delta = -1;
-  return(c_year - getYear()const + delta);
-}
+    }
+    */
+
+
 char BaseballStatistic::getBatting()const{
   return batting;
 }
@@ -125,12 +134,33 @@ double BaseballStatistic::getOPS()const{
 double BaseballStatistic::getERA()const{
   return era;
 }
-int getDay()const{
+/*int Date::getDay()const{
   return day;
 }
-int getMonth()const{
+int Date::getMonth()const{
     return month;
 }
-int getYear()const{
+int Date::getYear()const{
     return year;
+}
+int Date::getAge()const
+{
+  int delta = 0;
+  int c_month, c_day, c_year;
+  cout << "Enter current date(month, day, year): ";
+  cin >> c_month >> c_day >> c_year;
+    
+  if (month > c_month)
+  {
+      delta = -1;
+  }
+  if (month == c_month && day > c_day) 
+  {
+      delta = -1;
+  }
+  return(c_year - year + delta);
+}
+*/
+void BaseballStatistic::print()const{
+   cout << getLastName() << " " << getFirstName() << " " << dob->getDay() << " " << endl;
 }
