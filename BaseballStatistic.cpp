@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//Constructor
 BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_position, int y, int m, int d, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers)
 {
     
@@ -24,7 +25,7 @@ BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::
 		setERA(num_ers);
         dob = new Date(y, m, d);
 }
-
+//Set functions
 void BaseballStatistic::setFirstName(std::string fname)
 {
   firstName = fname;
@@ -96,17 +97,6 @@ int BaseballStatistic::getJerseyNum()const{
 std::string BaseballStatistic::getPosition()const{
   return position;
 }
-
-//Check function below
-/*std::string getDate(int c_month, int c_day, int c_year;)const {
-  int c_month, c_day, c_year;	
-  cout << "Enter current date(MM DD YYYY): ";
-  cin >> c_month >> c_day >> c_year;
-	return (c_month, c_day, c_year); 
-    }
-    */
-
-
 char BaseballStatistic::getBatting()const{
   return batting;
 }
@@ -134,33 +124,8 @@ double BaseballStatistic::getOPS()const{
 double BaseballStatistic::getERA()const{
   return era;
 }
-/*int Date::getDay()const{
-  return day;
-}
-int Date::getMonth()const{
-    return month;
-}
-int Date::getYear()const{
-    return year;
-}
-int Date::getAge()const
-{
-  int delta = 0;
-  int c_month, c_day, c_year;
-  cout << "Enter current date(month, day, year): ";
-  cin >> c_month >> c_day >> c_year;
-    
-  if (month > c_month)
-  {
-      delta = -1;
-  }
-  if (month == c_month && day > c_day) 
-  {
-      delta = -1;
-  }
-  return(c_year - year + delta);
-}
-*/
+
 void BaseballStatistic::print()const{
-   cout << getLastName() << " " << getFirstName() << " " << dob->getDay() << " " << endl;
+   cout << getTeamName() << " " << getJerseyNum() << " " << getFirstName() << " " << getLastName() << " " << dob->getYear() << " " << dob->getMonth() << " " << dob->getDay() << " " << getBatting() << " " << getThrowing() << endl;
+// teamName >> jerseyNum >> firstName >> lastName >> year >> month >> day >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position;
 }
