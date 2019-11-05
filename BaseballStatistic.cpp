@@ -1,3 +1,9 @@
+// BaseballStatistic.cpp
+// Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
+// November 5, 2019
+// The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
+
+
 #include <iostream>
 #include <string>
 #include "BaseballStatistic.h"
@@ -124,8 +130,7 @@ double BaseballStatistic::getOPS()const{
 double BaseballStatistic::getERA()const{
   return era;
 }
-
+// Printing File
 void BaseballStatistic::print()const{
-   cout << getTeamName() << " " << getJerseyNum() << " " << getFirstName() << " " << getLastName() << " " << dob->getYear() << " " << dob->getMonth() << " " << dob->getDay() << " " << getBatting() << " " << getThrowing() << endl;
-// teamName >> jerseyNum >> firstName >> lastName >> year >> month >> day >> batting >> throwing >> atBats >> battingAverage >> hr >> rbi >> sb >> ops >> era >> position;
+   cout << getTeamName() << " " << getJerseyNum() << " " << getFirstName() << " " << getLastName() << " " << dob->getYear() << " " << dob->getMonth() << " " << dob->getDay() << " " << getBatting() << " " << getThrowing() << " " << getAtBats() << " " << getBattingAverage() << " " << getHR() << " " << getRBI() << " " << getSB() << " " << getOPS() << " " << getERA() << endl;
 }
