@@ -1,10 +1,30 @@
 #include "Filter.h"
 #include "BaseballStatistic.h"
+#include "Date.h"
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
+
+
+void Filter::swap1(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
+  {
+   /* BaseballStatistic temp = *a;
+    *a=*b;
+    *b =temp;*/
+    
+    BaseballStatistic temp = e_Stat[oIdx]; 
+    e_Stat[oIdx] = e_Stat[nIdx]; 
+    e_Stat[nIdx] = temp;
+  }
+
+void Filter::swap2(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
+  {
+    BaseballStatistic temp = e_Stat[oIdx]; 
+    e_Stat[oIdx] = e_Stat[nIdx]; 
+    e_Stat[nIdx] = temp;
+  }
 
 void Filter::sort1(vector<BaseballStatistic>& e_Stat)
 {
@@ -19,13 +39,13 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
         for (j = i+1; j < e_Stat.size(); j++) 
            if (
 
-              (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) < 0)
+              (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) < 0)
              
-              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFirstName()const.compare(e_Stat[min_idx].getFirstName()const ) < 0)
+              || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName() ) < 0)
 
-              || (e_Stat[j].getLastName()const.compare(e_Stat[min_idx].getLastName()const) == 0 && e_Stat[j].getFirstName()const.compare(e_Stat[min_idx].getFirstName()const) == 0 && e_Stat[j].getPosition()const < e_Stat[min_idx].getPosition()const ) 
-
+              || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName()) == 0 && e_Stat[j].getPosition() < e_Stat[min_idx].getPosition()) 
               )
+       
 
             min_idx = j; 
 
@@ -48,13 +68,11 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 
           if (
 
-              (e_Stat[j].getTeamName()const.compare(e_Stat[min_idx].getTeamName()const) < 0)
+             (e_Stat[j].getTeamName().compare(e_Stat[min_idx].getTeamName()) < 0)
 
-              
+             // || (e_Stat[j].getTeamName().compare(e_Stat[min_idx].getTeamName()) == 0 && e_Stat[j].getJerseyNum().compare(e_Stat[min_idx].getJerseyNum()) < 0)
 
-              || (e_Stat[j].getTeamName()const.compare(e_Stat[min_idx].getTeamName()const) == 0 && e_Stat[j].getJerseyNum()const.compare(e_Stat[min_idx].getJerseyNum()const ) < 0)
-
-    )
+              )
 
 		  min_idx = j; 
 
