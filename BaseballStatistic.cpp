@@ -9,7 +9,7 @@
 #include "BaseballStatistic.h"
 #include "Date.h"
 
-using namespace std;
+
 
 //Constructor
 BaseballStatistic::BaseballStatistic(std::string fname, std::string lname, std::string tname, int j_num, std::string p_position, int y, int m, int d, char num_bat, char num_throw, int at_bat, double bat_avg, int hour, int num_rbi, int stolen_base, double num_ops, double num_ers)
