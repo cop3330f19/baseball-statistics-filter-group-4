@@ -1,3 +1,9 @@
+// Filter.cpp
+// Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
+// November 5, 2019
+// The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
+
+
 #include "Filter.h"
 #include "BaseballStatistic.h"
 #include "Date.h"
@@ -10,11 +16,12 @@ using namespace std;
 
 void Filter::swap(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
   {
-    BaseballStatistic temp = e_Stat[oIdx]; //create temporary BaseballStatistic variable to hold old value during swap
-    e_Stat[oIdx] = e_Stat[nIdx]; // assign the min_idx to position
-    e_Stat[nIdx] = temp;  //assign the previous element to the new sorted postion
+    BaseballStatistic temp = e_Stat[oIdx]; 
+    e_Stat[oIdx] = e_Stat[nIdx]; 
+    e_Stat[nIdx] = temp;
   }
 
+//First sort for option 1(Sort by name and position)
 void Filter::sort1(vector<BaseballStatistic>& e_Stat)
 {
   
@@ -31,7 +38,7 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
   { 
 
         min_idx = i;     
-
+       //Compare last name to first name
         for (j = i+1; j < e_Stat.size(); j++) 
            if (
 
@@ -39,7 +46,7 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
              
               || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName() ) < 0)
 
-              || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName()) == 0 && e_Stat[j].getPosition() < e_Stat[min_idx].getPosition()) 
+             // || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName()) == 0 && e_Stat[j].getPosition() < e_Stat[min_idx].getPosition()) 
               )
        
 
@@ -51,12 +58,12 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
       
 } 
 }
-  
+  //Second sort for option 2(sorting by team name and jersey number)
 void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 {
 
 	  int i, j, min_idx; 
-
+    // Compare the team names 
     for (i = 0; i < e_Stat.size()-1; i++) 
     { 
 
