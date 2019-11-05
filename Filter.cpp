@@ -16,9 +16,9 @@ using namespace std;
 
 void Filter::swap(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
   {
-    BaseballStatistic temp = e_Stat[oIdx]; 
-    e_Stat[oIdx] = e_Stat[nIdx]; 
-    e_Stat[nIdx] = temp;
+    BaseballStatistic temp = e_Stat[oIdx]; // //temporary baseball variable to hold the old value during swap
+    e_Stat[oIdx] = e_Stat[nIdx]; // assign the min_idx(element to be moved) to it's position
+    e_Stat[nIdx] = temp; //assign the element previously at the now sorted postion
   }
 
 //First sort for option 1(Sort by name and position)
@@ -38,7 +38,7 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
   { 
 
         min_idx = i;     
-       //Compare last name to first name
+
         for (j = i+1; j < e_Stat.size(); j++) 
            if (
 
@@ -63,7 +63,7 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 {
 
 	  int i, j, min_idx; 
-    // Compare the team names 
+
     for (i = 0; i < e_Stat.size()-1; i++) 
     { 
 
