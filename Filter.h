@@ -7,12 +7,15 @@
 class Filter{
   
   public:
-          void sort1(vector<BaseballStatistic>& e_Stat);
-          void sort2(vector<BaseballStatistic>& e_Stat);
-          int search1(vector<BaseballStatistic>, string, string);
-          int search2(vector<BaseballStatistic>, string);
+          void sort1(std::vector<BaseballStatistic>&);
+          void sort2(std::vector<BaseballStatistic>&);
+          int search1(std::vector<BaseballStatistic>, std::string, std::string);
+          int search2(std::vector<BaseballStatistic>, std::string);
+          void swap1(std::vector<BaseballStatistic>&, int, int);
+          void swap2(std::vector<BaseballStatistic>&, int, int);
   
 };        
 
 #endif
+
 
