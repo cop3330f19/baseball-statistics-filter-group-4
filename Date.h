@@ -1,17 +1,22 @@
+// Date.h
+// Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
+// November 5, 2019
+// The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
+
 #ifndef DATE_H
 #define DATE_H
-
+#include "BaseballStatistic.h"
 #include <string>
 
 class Date
 {
 	
 	private:
-		const int day,
-				month,
-				year;
+		const int day;
+        const int month;
+        const int year;
 	
-	public:
+    public:
 		//Constructor accepts the date in the format YYYY, MM, DD
 		//eg Date date(2019, 9, 27);
 		explicit Date(int y, int m, int d):
