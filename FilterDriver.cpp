@@ -24,6 +24,18 @@ int main(){
   
   Filter obj;
     
+cout << "******FILTER OPTIONS******" << endl;
+cout << "* T   - Team             *" << endl;
+cout << "* P   - Position         *" << endl;
+cout << "* B   - Batting          *" << endl;
+cout << "* BA  - Batting Average  *" << endl;
+cout << "* H   - Home Runs        *" << endl;
+cout << "* R   - Runs Batted In   *" << endl;
+cout << "* S   - Stolen Bases     *" << endl;
+cout << "* O   - OPS              *" << endl;
+cout << "* E   - ERA              *" << endl;
+cout << "**************************" << endl;
+    
  
     
     
