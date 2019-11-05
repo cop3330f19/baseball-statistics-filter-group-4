@@ -1,3 +1,10 @@
+// BaseballStatistic.h
+// Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
+// November 5, 2019
+// The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
+
+
+
 #ifndef BASEBALL_STATISTIC_H
 #define BASEBALL_STATISTIC_H
 
@@ -33,7 +40,6 @@ class BaseballStatistic
 		BaseballStatistic(std::string, std::string, std::string, int,
 			std::string, int, int, int, char, char, int, double, int,
 			int, int, double, double);
-			
 
 		
 		//mutator
@@ -75,4 +81,5 @@ class BaseballStatistic
 		
 		
 };
+
 #endif
