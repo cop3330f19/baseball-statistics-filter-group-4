@@ -14,10 +14,10 @@ class Filter{
   public:
           void sort1(std::vector<BaseballStatistic>&);
           void sort2(std::vector<BaseballStatistic>&);
-          int search1(std::vector<BaseballStatistic>, std::string, std::string);
-          int search2(std::vector<BaseballStatistic>, std::string);
+          static std::vector<BaseballStatistic> search(std::vector<BaseballStatistic>&, std::string, std::string);
           void swap(std::vector<BaseballStatistic>&, int, int);
   
 };        
 
 #endif
+
