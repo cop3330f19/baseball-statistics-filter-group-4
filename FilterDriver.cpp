@@ -22,64 +22,87 @@ void loadFile(vector<BaseballStatistic>&);
 
 int main(){ 
   
-  Filter obj;
-    
-cout << "******FILTER OPTIONS******" << endl;
-cout << "* T   - Team             *" << endl;
-cout << "* P   - Position         *" << endl;
-cout << "* B   - Batting          *" << endl;
-cout << "* BA  - Batting Average  *" << endl;
-cout << "* H   - Home Runs        *" << endl;
-cout << "* R   - Runs Batted In   *" << endl;
-cout << "* S   - Stolen Bases     *" << endl;
-cout << "* O   - OPS              *" << endl;
-cout << "* E   - ERA              *" << endl;
-cout << "**************************" << endl;
-    
+  
+    //Create object
+    Filter obj;
  
-    
-    
- // Use cases to prompt user to choose from sorting options. 
-       vector<BaseballStatistic> e_Stat;
-       loadFile(e_Stat);
+    // Use cases to prompt user to choose from sorting options. 
+    vector<BaseballStatistic> e_Stat;
+    loadFile(e_Stat);
 	char option;
     string firstName, lastName, teamName;
+    string key, filter;
     
-    loadFile(e_Stat);
+    cout << "******FILTER OPTIONS******" << endl;
+    cout << "* T   - Team             *" << endl;
+    cout << "* P   - Position         *" << endl;
+    cout << "* B   - Batting          *" << endl;
+    cout << "* BA  - Batting Average  *" << endl;
+    cout << "* H   - Home Runs        *" << endl;
+    cout << "* R   - Runs Batted In   *" << endl;
+    cout << "* S   - Stolen Bases     *" << endl;
+    cout << "* O   - OPS              *" << endl;
+    cout << "* E   - ERA              *" << endl;
+    cout << "**************************" << endl;
+    
+   //Declaration of new vector 
+   vector<BaseballStatistic> result = e_Stat;
+    
+    do{
+      cout << "Enter all filter key pairs you would like to use (enter F when finished):" << endl;
+      cin >> filter >> key;
+      StringHelper::toUpper(filter);
+      if(filter != "F" && filter != "T" && filter != "P" && filter != "B" && filter != "BA" && filter != "H" && filter != "R" && filter != "S" && filter != "O" && filter != "E")
+        cout << "Invalid input! Please select from the filter options or F to end filter options." << endl;
+      else if (filter != "F")
+       result=  Filter::search(result, key, filter);
+    }// End of do loop 
+       while(filter != "F");
+       
+    
+    
+    
+    
+    
 	
     //Switch statement to prompt user to choose between 1 of 2 options.
-	cout << "Would you like to search by A) Player Name & Position, or B) Team & Jersey Number? Enter A or B: ";
+	cout << "Would you like to search by A) Player Name & Position, B) Team & Jersey Number, C) No Sort? Enter A, B, or C: ";
 	cin >> option;
 	
 	switch(option)
 	{
 		case 'A':
             // Case #1: using sorting option 1
-			obj.sort1(e_Stat);
+			obj.sort1(result);
             
             cout << "Sorted List #1" << endl;
-            for(int i = 0; i < e_Stat.size(); i++)
-		    e_Stat[i].print();
+            for(int i = 0; i < result.size(); i++)
+		    result[i].print();
             
-			obj.search1(e_Stat, firstName, lastName);
+			
             break;
 		case 'B':
             // Case #2: using sorting option 1
-			obj.sort2(e_Stat);
+			obj.sort2(result);
             cout << "Sorted List #2" << endl;
-            for(int i = 0; i < e_Stat.size(); i++)
-		    e_Stat[i].print();
+            for(int i = 0; i < result.size(); i++)
+		    result[i].print();
             
-			obj.search2(e_Stat, teamName);
+           break;
+        case 'C':
+            // Unsorted vector 
+            cout << "Unsorted List" << endl;
+            for(int i = 0; i < result.size(); i++)
+		    result[i].print(); 
 			break;
 		default:
 			cout << "You did not select a correct option." << endl;
+            cin >> option;
 			break;
 	 }
     
 	
 			
-
 }
 
 
@@ -97,7 +120,7 @@ void loadFile(vector<BaseballStatistic>& e_Stat)
     int day, month, year;
     
     
-    
+    // Reading in file and splitting at comma. 
     while(in.good())
     {
        // deccaring temp variable as a string
@@ -158,11 +181,10 @@ void loadFile(vector<BaseballStatistic>& e_Stat)
        position = temp;
         
         
-       // cout << teamName << " " << jerseyNum << " " << firstName << " " << lastName << " " << year << " " << month << " " << day << " " << batting << " " << throwing << " " << atBats << " " << battingAverage << " " << hr << " " << rbi << " " << sb << " " << ops << " " << era << " " << position << endl;
+       
        BaseballStatistic temp1(firstName, lastName, teamName, jerseyNum, position, year, month, day, batting, throwing, atBats, battingAverage, hr, rbi, sb, ops, era);
 	e_Stat.push_back(temp1);
 	}
      in.close();
     }
     
-
