@@ -6,14 +6,16 @@
 
 #include "Filter.h"
 #include "BaseballStatistic.h"
+#include "StringHelper.h"
 #include "Date.h"
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 
-
+//Swap function
 void Filter::swap(vector<BaseballStatistic>& e_Stat, int oIdx, int nIdx)
   {
     BaseballStatistic temp = e_Stat[oIdx]; // //temporary baseball variable to hold the old value during swap
@@ -35,7 +37,7 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
     
   
   for (i = 0; i < e_Stat.size()-1; i++) 
-  { 
+  { // Start of for loop
 
         min_idx = i;     
 
@@ -46,7 +48,7 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
              
               || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName() ) < 0)
 
-             // || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName()) == 0 && e_Stat[j].getPosition() < e_Stat[min_idx].getPosition()) 
+             || (e_Stat[j].getLastName().compare(e_Stat[min_idx].getLastName()) == 0 && e_Stat[j].getFirstName().compare(e_Stat[min_idx].getFirstName()) == 0 && e_Stat[j].getPosition() < e_Stat[min_idx].getPosition()) 
               )
        
 
@@ -54,9 +56,8 @@ void Filter::sort1(vector<BaseballStatistic>& e_Stat)
 
         swap(e_Stat, min_idx, i);
      
-          cout << teamName << " " << jerseyNum << " " << firstName << " " << lastName << " " << year << " " << month << " " << day << " " << batting << " " << throwing << " " << atBats << " " << battingAverage << " " << hr << " " << rbi << " " << sb << " " << ops << " " << era << " " << position << endl;
       
-} 
+} // End of for loop 
 }
   //Second sort for option 2(sorting by team name and jersey number)
 void Filter::sort2(vector<BaseballStatistic>& e_Stat)
@@ -65,7 +66,7 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 	  int i, j, min_idx; 
 
     for (i = 0; i < e_Stat.size()-1; i++) 
-    { 
+    { // Start of for loop.
 
         min_idx = i; 
 
@@ -76,7 +77,7 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 
              (e_Stat[j].getTeamName().compare(e_Stat[min_idx].getTeamName()) < 0)
 
-             // || (e_Stat[j].getTeamName().compare(e_Stat[min_idx].getTeamName()) == 0 && e_Stat[j].getJerseyNum().compare(e_Stat[min_idx].getJerseyNum()) < 0)
+             || (e_Stat[j].getTeamName().compare(e_Stat[min_idx].getTeamName()) == 0 && e_Stat[j].getJerseyNum() < e_Stat[min_idx].getJerseyNum())
 
               )
 
@@ -86,60 +87,59 @@ void Filter::sort2(vector<BaseballStatistic>& e_Stat)
 
         swap(e_Stat, min_idx, i);
 
-         } 
+         } // End of for loop
 }
   
-int Filter::search1(vector<BaseballStatistic> e_Stat, string firstName, string lastName)
-{
 
-  int lo = 0;
-
-  int hi = e_Stat.size();
-    while (lo <= hi) 
-
-    { 
-
-        int location = lo + (hi-lo)/2; 
-
-        if (e_Stat[location].getLastName() == lastName && e_Stat[location].getFirstName() == firstName) 
-
-            return location;
+// Search/ Filter Function 
+std::vector<BaseballStatistic> Filter::search(std::vector<BaseballStatistic>& e_Stat, std::string key , std::string filter){
     
-        if (e_Stat[location].getLastName() < lastName 	|| (e_Stat[location].getLastName() == lastName && e_Stat[location].getFirstName() < firstName)) 
-
-            lo = location + 1;
-      
-        else
-            hi = location - 1; 
-    } 
-
-    return -1; 
+    bool valid;
+    vector<BaseballStatistic> result;
+    
+    for(int i = 0; i < e_Stat.size(); i++)
+    { //Start of for loop
+        valid = false;
+        if(filter == "T"){
+            if(e_Stat[i].getTeamName() == key)
+                valid = true;
+        }
+        else if(filter == "P"){
+            if(e_Stat[i].getPosition() == key)
+                valid = true;
+        }
+        else if(filter == "B"){
+            if(e_Stat[i].getBatting() == key[0])
+                valid = true;
+        }
+        else if(filter == "BA"){
+            if(e_Stat[i].getBattingAverage() == atof(key.c_str()))
+                valid = true;
+        }
+        else if(filter == "H"){
+            if(e_Stat[i].getHR() == atoi(key.c_str()))
+                valid = true;
+        }
+        else if(filter == "R"){
+            if(e_Stat[i].getRBI() == atoi(key.c_str()))
+                valid = true;
+        }
+        else if(filter == "S"){
+            if(e_Stat[i].getSB() == atoi(key.c_str()))
+                valid = true;
+        }
+        else if(filter == "O"){
+            if(e_Stat[i].getOPS() == atoi(key.c_str()))
+                valid = true;
+        }
+        else if(filter == "E"){
+            if(e_Stat[i].getERA() == atoi(key.c_str()))
+                valid = true;
+        }
+        if(valid)
+           result.push_back(e_Stat[i]);
+    }// End of for loop
+    return result;
 }
-  
-int Filter::search2(vector<BaseballStatistic> e_Stat, string teamName)
-{
-  
-  int lo = 0;
 
-  int hi = e_Stat.size();
-    while (lo <= hi) 
 
-    { 
-
-        int location = lo + (hi-lo)/2; 
-
-        if (e_Stat[location].getTeamName() == teamName ) 
-
-            return location; 
-
-        if (e_Stat[location].getTeamName() < teamName || (e_Stat[location].getTeamName() == teamName))
-
-            lo = location + 1; 
-      
-        else
-            hi = location - 1; 
-
-    } 
-
-    return -1;
-}
