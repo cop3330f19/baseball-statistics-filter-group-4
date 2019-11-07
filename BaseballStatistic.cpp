@@ -132,6 +132,5 @@ double BaseballStatistic::getERA()const{
 }
 // Printing File
 void BaseballStatistic::print()const{
-   cout << getTeamName() << " " << getJerseyNum() << " " << getFirstName() << " " << getLastName() << " " << dob->getAge() << " " << getBatting() << " " << getThrowing() << " " << getAtBats() << " " << getBattingAverage() << " " << getHR() << " " << getRBI() << " " << getSB() << " " << getOPS() << " " << getERA() << " " << getPosition() << endl;
+   cout << getLastName() << ", " << getFirstName() << " " << dob->getAge() << " " << getJerseyNum() << " " << getTeamName() << " " << getPosition() << " " << getThrowing() << " " << getAtBats() << " " << getBattingAverage() << " " << getHR() << " " << getRBI() << " " << getSB() << " " << getOPS() << " " << getERA() << endl;
 }
-
