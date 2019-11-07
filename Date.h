@@ -1,6 +1,6 @@
 // Date.h
 // Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
-// November 5, 2019
+// November 7, 2019
 // The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
 
 #ifndef DATE_H
