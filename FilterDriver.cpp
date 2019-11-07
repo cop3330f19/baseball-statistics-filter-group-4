@@ -1,6 +1,6 @@
 // FilterDriver.cpp
 // Kristin McGee, Tramia McGee, Nicholas Buggs, Jermaine Le Grand
-// November 7, 2019
+// November 5, 2019
 // The purpose of this program is to read in multiple lines from a file, sort the file, and search through the file.
 
 
@@ -32,7 +32,26 @@ int main(){
 	char option;
     string firstName, lastName, teamName;
     string key, filter;
+    string name;
     
+    
+    
+    cout << "*************************************************************" << endl;
+    cout << "* Welcome to the National League Baseball Statistics Search *" << endl;
+    cout << "*                                                           *" << endl;
+    cout << "* This tool allows you to sort and search National League   *" << endl;
+    cout << "* team statstics per player for 2019.                       *" << endl;
+    cout << "* Use the menus to select your sort/search options          *" << endl;
+    cout << "*************************************************************" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Enter your name: ";
+    cin >> name;
+    cout << "********************************************************************" << endl;
+    cout << "Hello " << name << "! Follow the steps below to search for a player." << endl;
+    cout << "********************************************************************" << endl;
+    cout << endl;
+    cout << endl;
     cout << "******FILTER OPTIONS******" << endl;
     cout << "* T   - Team             *" << endl;
     cout << "* P   - Position         *" << endl;
@@ -44,12 +63,20 @@ int main(){
     cout << "* O   - OPS              *" << endl;
     cout << "* E   - ERA              *" << endl;
     cout << "**************************" << endl;
+    cout << endl;
+    cout << "Example input:" << endl;
+    cout << "Enter all filter key pairs you would like to use (enter 'F F' when finished):" << endl;
+    cout << "T Braves" << endl;
+    cout << "B R" << endl;
+    cout << "H 2" << endl;
+    cout << "F F" << endl;
+    cout << endl;
     
    //Declaration of new vector 
    vector<BaseballStatistic> result = e_Stat;
     
     do{
-      cout << "Enter all filter key pairs you would like to use (enter F when finished):" << endl;
+      cout << name << " please enter all filter key pairs you would like to use (enter 'F F' when finished):" << endl;
       cin >> filter >> key;
       StringHelper::toUpper(filter);
       if(filter != "F" && filter != "T" && filter != "P" && filter != "B" && filter != "BA" && filter != "H" && filter != "R" && filter != "S" && filter != "O" && filter != "E")
@@ -66,7 +93,11 @@ int main(){
     
 	
     //Switch statement to prompt user to choose between 1 of 2 options.
-	cout << "Would you like to search by A) Player Name & Position, B) Team & Jersey Number, C) No Sort? Enter A, B, or C: ";
+	cout << "Would you like to sort by:" << endl;
+    cout << "A) Player Name & Position" << endl; 
+    cout << "B) Team & Jersey Number" << endl; 
+    cout << "C) No Sort?" << endl;
+    cout << "Enter A, B, or C: ";
 	cin >> option;
 	
 	switch(option)
@@ -75,7 +106,10 @@ int main(){
             // Case #1: using sorting option 1
 			obj.sort1(result);
             
-            cout << "Sorted List #1" << endl;
+            // Header for output.
+            cout << "RESULT" << endl;
+            cout << "Player Name||Age||#||Team||P||B/T||AB||AVG||HR||RBI||SB||OPS||ERA" << endl;
+            cout << "-----------------------------------------------------------------" << endl;
             for(int i = 0; i < result.size(); i++)
 		    result[i].print();
             
@@ -84,14 +118,18 @@ int main(){
 		case 'B':
             // Case #2: using sorting option 1
 			obj.sort2(result);
-            cout << "Sorted List #2" << endl;
+            cout << "RESULT" << endl;
+            cout << "Player Name||Age||#||Team||P||B/T||AB||AVG||HR||RBI||SB||OPS||ERA" << endl;
+            cout << "-----------------------------------------------------------------" << endl;
             for(int i = 0; i < result.size(); i++)
 		    result[i].print();
             
            break;
         case 'C':
             // Unsorted vector 
-            cout << "Unsorted List" << endl;
+            cout << "RESULT" << endl;
+            cout << "Player Name||Age||#||Team||P||B/T||AB||AVG||HR||RBI||SB||OPS||ERA" << endl;
+            cout << "-----------------------------------------------------------------" << endl;
             for(int i = 0; i < result.size(); i++)
 		    result[i].print(); 
 			break;
@@ -188,3 +226,4 @@ void loadFile(vector<BaseballStatistic>& e_Stat)
      in.close();
     }
     
+
