@@ -72,9 +72,11 @@ int main(){
     cout << "F F" << endl;
     cout << endl;
     
+    bool yesOrNo = true;
+    
    //Declaration of new vector 
    vector<BaseballStatistic> result = e_Stat;
-    
+    while(yesOrNo){
     do{
       cout << name << " please enter all filter key pairs you would like to use (enter 'F F' when finished):" << endl;
       cin >> filter >> key;
@@ -138,9 +140,28 @@ int main(){
             cin >> option;
 			break;
 	 }
-    
-	
-			
+        string choice2;
+        bool answer = false;        
+        
+        while(!answer){
+            cout << "Would you like to enter another filter (Y/N)? " << endl; 
+            cin >> choice2;
+        if(choice2 == "Y" || choice2 == "y"){
+            vector<BaseballStatistic> temp = e_Stat;
+            result = e_Stat;
+            answer = true;
+            continue;
+        } 
+	     else if(choice2 == "N" || choice2 == "n"){
+             answer = true;
+             yesOrNo = false;
+             break;
+         }
+        else
+            cout << "Invalid choice" << endl;
+    }
+    }    
+    return 0;
 }
 
 
